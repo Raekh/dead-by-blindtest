@@ -1,0 +1,196 @@
+export type Language = 'en' | 'fr';
+
+export const translations = {
+  en: {
+    // Header
+    title: 'Dead by Daylight',
+    subtitle: 'Terror Radius Blind Test',
+    audioPreview: 'Audio Preview',
+
+    // Start Screen
+    startQuestion: 'Can you identify the killer by their terror radius?',
+    step1: 'Listen to the',
+    step1Hint: 'FAR',
+    step1End: 'heartbeat hint',
+    step2: 'Guess the killer - wrong answers unlock more hints',
+    step3: 'Score more points by guessing with fewer hints!',
+    pointsPerGuess: 'Points per correct guess',
+    enterTheFog: 'Enter the Fog',
+
+    // Game Screen
+    score: 'Score',
+    terrorRadius: 'Terror Radius',
+    listenAndGuess: 'Listen carefully and make your guess',
+    clickToHear: 'Click a hint to hear the terror radius',
+    yourGuess: 'Your Guess',
+    typeKillerName: 'Type killer name...',
+    submit: 'Submit',
+    skip: 'Skip',
+    audioNotFound: 'Audio file not found',
+
+    // Hint levels
+    far: 'FAR',
+    mid: 'MID',
+    close: 'CLOSE',
+    chase: 'CHASE',
+
+    // Hint descriptions
+    farDesc: 'Distant heartbeat',
+    midDesc: 'Getting closer',
+    closeDesc: 'Very near',
+    chaseDesc: 'In pursuit',
+
+    // Results Screen
+    trialComplete: 'Trial Complete',
+    entityPleased: 'Entity Pleased',
+    mercilessKiller: 'Merciless Killer',
+    brutalKiller: 'Brutal Killer',
+    ruthlessKiller: 'Ruthless Killer',
+    entityDispleased: 'Entity Displeased',
+    killersIdentified: 'killers identified',
+    of: 'of',
+    roundBreakdown: 'Round Breakdown',
+    skipped: 'Skipped',
+    failed: 'Failed',
+    playAgain: 'Play Again',
+
+    // Preview Page
+    audioPreviewMode: 'Audio Preview Mode',
+    backToGame: 'Back to Game',
+    audioTypes: 'Audio Types',
+    unique: 'Unique',
+    generic: 'Generic',
+    lullaby: 'Lullaby',
+    uniqueDesc: 'Tagged killers: Unique theme with TR and chase',
+    genericDesc: 'Untagged killers: Generic shared theme',
+    lullabyDesc: 'Replaces terror radius for some killers',
+    search: 'Search',
+    searchPlaceholder: 'Search killer name...',
+    filter: 'Filter',
+    allKillers: 'All killers',
+    taggedUnique: 'Tagged (unique theme)',
+    untaggedGeneric: 'Untagged (generic themes)',
+    hasLullaby: 'Has lullaby',
+    noTerrorRadius: 'No terror radius',
+    groupBy: 'Group by',
+    noGrouping: 'No grouping',
+    taggedUntagged: 'Tagged/Untagged',
+    terrorRadiusTheme: 'Terror radius theme',
+    tagged: 'Tagged',
+    untagged: 'Untagged',
+    aliases: 'Aliases',
+    none: 'None',
+    play: 'Play',
+    statistics: 'Statistics',
+    totalKillers: 'Total Killers',
+    uniqueThemes: 'Unique Themes',
+    withLullaby: 'With Lullaby',
+    noTerror: 'No Terror Radius',
+    totalThemes: 'Total Themes',
+    type: 'Type',
+    killer: 'killer',
+    killers: 'killers',
+
+    // Volume control
+    volume: 'Volume',
+    mute: 'Mute',
+    unmute: 'Unmute',
+  },
+  fr: {
+    // Header
+    title: 'Dead by Daylight',
+    subtitle: 'Test du Rayon de Terreur',
+    audioPreview: 'Aperçu Audio',
+
+    // Start Screen
+    startQuestion: 'Pouvez-vous identifier le tueur par son rayon de terreur ?',
+    step1: 'Écoutez l\'indice',
+    step1Hint: 'LOIN',
+    step1End: 'du battement de cœur',
+    step2: 'Devinez le tueur - les mauvaises réponses débloquent plus d\'indices',
+    step3: 'Marquez plus de points en devinant avec moins d\'indices !',
+    pointsPerGuess: 'Points par bonne réponse',
+    enterTheFog: 'Entrer dans le Brouillard',
+
+    // Game Screen
+    score: 'Score',
+    terrorRadius: 'Rayon de Terreur',
+    listenAndGuess: 'Écoutez attentivement et faites votre choix',
+    clickToHear: 'Cliquez sur un indice pour entendre le rayon de terreur',
+    yourGuess: 'Votre Réponse',
+    typeKillerName: 'Tapez le nom du tueur...',
+    submit: 'Valider',
+    skip: 'Passer',
+    audioNotFound: 'Fichier audio introuvable',
+
+    // Hint levels
+    far: 'LOIN',
+    mid: 'MOYEN',
+    close: 'PROCHE',
+    chase: 'POURSUITE',
+
+    // Hint descriptions
+    farDesc: 'Battement distant',
+    midDesc: 'Se rapproche',
+    closeDesc: 'Très proche',
+    chaseDesc: 'En poursuite',
+
+    // Results Screen
+    trialComplete: 'Épreuve Terminée',
+    entityPleased: 'Entité Satisfaite',
+    mercilessKiller: 'Tueur Impitoyable',
+    brutalKiller: 'Tueur Brutal',
+    ruthlessKiller: 'Tueur Sans Pitié',
+    entityDispleased: 'Entité Mécontente',
+    killersIdentified: 'tueurs identifiés',
+    of: 'sur',
+    roundBreakdown: 'Détail des Manches',
+    skipped: 'Passé',
+    failed: 'Échoué',
+    playAgain: 'Rejouer',
+
+    // Preview Page
+    audioPreviewMode: 'Mode Aperçu Audio',
+    backToGame: 'Retour au Jeu',
+    audioTypes: 'Types Audio',
+    unique: 'Unique',
+    generic: 'Générique',
+    lullaby: 'Berceuse',
+    uniqueDesc: 'Tueurs tagués : Thème unique avec TR et poursuite',
+    genericDesc: 'Tueurs non-tagués : Thème générique partagé',
+    lullabyDesc: 'Remplace le rayon de terreur pour certains tueurs',
+    search: 'Rechercher',
+    searchPlaceholder: 'Rechercher un tueur...',
+    filter: 'Filtrer',
+    allKillers: 'Tous les tueurs',
+    taggedUnique: 'Tagués (thème unique)',
+    untaggedGeneric: 'Non-tagués (thèmes génériques)',
+    hasLullaby: 'Avec berceuse',
+    noTerrorRadius: 'Sans rayon de terreur',
+    groupBy: 'Grouper par',
+    noGrouping: 'Pas de groupement',
+    taggedUntagged: 'Tagués/Non-tagués',
+    terrorRadiusTheme: 'Thème du rayon de terreur',
+    tagged: 'Tagué',
+    untagged: 'Non-tagué',
+    aliases: 'Alias',
+    none: 'Aucun',
+    play: 'Jouer',
+    statistics: 'Statistiques',
+    totalKillers: 'Total Tueurs',
+    uniqueThemes: 'Thèmes Uniques',
+    withLullaby: 'Avec Berceuse',
+    noTerror: 'Sans Rayon de Terreur',
+    totalThemes: 'Total Thèmes',
+    type: 'Type',
+    killer: 'tueur',
+    killers: 'tueurs',
+
+    // Volume control
+    volume: 'Volume',
+    mute: 'Couper le son',
+    unmute: 'Activer le son',
+  },
+} as const;
+
+export type TranslationKey = keyof typeof translations.en;
