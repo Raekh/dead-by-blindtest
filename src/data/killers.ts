@@ -689,6 +689,21 @@ export const KILLERS: Killer[] = [
       lullabies: [],
     },
   },
+
+  // ===========================================
+  // CHAPTER 37 - Krasue
+  // ===========================================
+  {
+    id: "krasue",
+    name: "The Krasue",
+    aliases: ["krasue", "burong", "sukapat"],
+    audio: {
+      terrorRadius: {
+        themes: ["TerrorRadius_Krasue"],
+      },
+      lullabies: [],
+    },
+  },
 ];
 
 // Theme metadata
@@ -789,6 +804,7 @@ export const THEMES: Record<string, { name: string; description: string }> = {
     description: "Animatronic unique theme",
   },
   TerrorRadius_Ghoul: { name: "Ghoul", description: "Ghoul unique theme" },
+  TerrorRadius_Krasue: { name: "Krasue", description: "Krasue unique theme" },
 };
 
 // Lullaby metadata
@@ -908,9 +924,9 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
   ],
   TerrorRadius_Ghost_Face: [
     { start: 0, end: 28, label: "far" },
-    { start: 28, end: 57, label: "mid" },
-    { start: 57, end: 86, label: "close" },
-    { start: 86, end: null, label: "chase" },
+    { start: 30, end: 60, label: "mid" },
+    { start: 60, end: 90, label: "close" },
+    { start: 90, end: null, label: "chase" },
   ],
   TerrorRadius_Demogorgon: [
     { start: 0, end: 27, label: "far" },
@@ -1039,10 +1055,16 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 90, end: null, label: "chase" },
   ],
   TerrorRadius_Houndmaster: [
-    { start: 0, end: 28, label: "far" },
-    { start: 28, end: 57, label: "mid" },
-    { start: 57, end: 85, label: "close" },
-    { start: 85, end: null, label: "chase" },
+    { start: 0, end: 29, label: "far" },
+    { start: 29, end: 59, label: "mid" },
+    { start: 59, end: 89, label: "close" },
+    { start: 89, end: null, label: "chase" },
+  ],
+  TerrorRadius_Ghoul: [
+    { start: 0, end: 29, label: "far" },
+    { start: 29, end: 58, label: "mid" },
+    { start: 58, end: 87, label: "close" },
+    { start: 87, end: null, label: "chase" },
   ],
   TerrorRadius_Animatronic: [
     { start: 0, end: 28, label: "far" },
@@ -1050,11 +1072,11 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 56, end: 84, label: "close" },
     { start: 84, end: null, label: "chase" },
   ],
-  TerrorRadius_Ghoul: [
-    { start: 0, end: 29, label: "far" },
-    { start: 29, end: 58, label: "mid" },
-    { start: 58, end: 87, label: "close" },
-    { start: 87, end: null, label: "chase" },
+  TerrorRadius_Krasue: [
+    { start: 0, end: 31, label: "far" },
+    { start: 31, end: 62, label: "mid" },
+    { start: 62, end: 93, label: "close" },
+    { start: 93, end: null, label: "chase" },
   ],
 };
 
