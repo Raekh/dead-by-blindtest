@@ -8,7 +8,6 @@ export interface AudioRange {
 
 export interface TerrorRadius {
   themes: string[];
-  ranges: AudioRange[];
 }
 
 export interface Lullaby {
@@ -53,12 +52,6 @@ export const KILLERS: Killer[] = [
           "TerrorRadius_Theme05",
           "TerrorRadius_Theme06",
         ],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -77,12 +70,6 @@ export const KILLERS: Killer[] = [
           "TerrorRadius_Theme05",
           "TerrorRadius_Theme06",
         ],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -94,12 +81,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Hillbilly"],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -115,12 +96,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Nurse"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -136,12 +111,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Shape"],
-        ranges: [
-          { start: 0, end: 21, label: "far" },
-          { start: 21, end: 42, label: "mid" },
-          { start: 42, end: 64, label: "close" },
-          { start: 64, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -157,12 +126,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Hag"],
-        ranges: [
-          { start: 0, end: 32, label: "far" },
-          { start: 32, end: 64, label: "mid" },
-          { start: 64, end: 96, label: "close" },
-          { start: 96, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -178,12 +141,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Doctor"],
-        ranges: [
-          { start: 0, end: 26, label: "far" },
-          { start: 26, end: 52, label: "mid" },
-          { start: 52, end: 78, label: "close" },
-          { start: 78, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -205,12 +162,6 @@ export const KILLERS: Killer[] = [
           "TerrorRadius_Theme04",
           "TerrorRadius_Theme05",
           "TerrorRadius_Theme06",
-        ],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
         ],
       },
       lullabies: [
@@ -239,12 +190,6 @@ export const KILLERS: Killer[] = [
           "TerrorRadius_Theme05",
           "TerrorRadius_Theme06",
         ],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -266,12 +211,6 @@ export const KILLERS: Killer[] = [
           "TerrorRadius_Theme04",
           "TerrorRadius_Theme05",
           "TerrorRadius_Theme06",
-        ],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
         ],
       },
       lullabies: [
@@ -300,12 +239,6 @@ export const KILLERS: Killer[] = [
           "TerrorRadius_Theme05",
           "TerrorRadius_Theme06",
         ],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -321,12 +254,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Clown"],
-        ranges: [
-          { start: 0, end: 26, label: "far" },
-          { start: 26, end: 52, label: "mid" },
-          { start: 52, end: 79, label: "close" },
-          { start: 79, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -342,12 +269,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Spirit"],
-        ranges: [
-          { start: 0, end: 33, label: "far" },
-          { start: 33, end: 67, label: "mid" },
-          { start: 67, end: 101, label: "close" },
-          { start: 101, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -363,12 +284,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Legion"],
-        ranges: [
-          { start: 0, end: 28, label: "far" },
-          { start: 28, end: 57, label: "mid" },
-          { start: 57, end: 86, label: "close" },
-          { start: 86, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -391,12 +306,6 @@ export const KILLERS: Killer[] = [
           "TerrorRadius_Theme05",
           "TerrorRadius_Theme06",
         ],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -412,12 +321,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Ghost_Face"],
-        ranges: [
-          { start: 0, end: 28, label: "far" },
-          { start: 28, end: 57, label: "mid" },
-          { start: 57, end: 86, label: "close" },
-          { start: 86, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -433,12 +336,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Demogorgon"],
-        ranges: [
-          { start: 0, end: 27, label: "far" },
-          { start: 27, end: 54, label: "mid" },
-          { start: 54, end: 81, label: "close" },
-          { start: 81, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -454,12 +351,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Oni"],
-        ranges: [
-          { start: 0, end: 27, label: "far" },
-          { start: 27, end: 54, label: "mid" },
-          { start: 54, end: 82, label: "close" },
-          { start: 82, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -475,12 +366,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Deathslinger"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -496,12 +381,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Executioner"],
-        ranges: [
-          { start: 0, end: 32, label: "far" },
-          { start: 32, end: 64, label: "mid" },
-          { start: 64, end: 96, label: "close" },
-          { start: 96, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -517,12 +396,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Blight"],
-        ranges: [
-          { start: 0, end: 24, label: "far" },
-          { start: 24, end: 48, label: "mid" },
-          { start: 48, end: 72, label: "close" },
-          { start: 72, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -538,12 +411,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Twins"],
-        ranges: [
-          { start: 0, end: 29, label: "far" },
-          { start: 29, end: 59, label: "mid" },
-          { start: 59, end: 88, label: "close" },
-          { start: 88, end: null, label: "chase" },
-        ],
       },
       lullabies: [
         { id: "Twins_Lullaby_1", name: "Victor's Lullaby 1" },
@@ -563,12 +430,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Trickster"],
-        ranges: [
-          { start: 0, end: 25, label: "far" },
-          { start: 25, end: 50, label: "mid" },
-          { start: 50, end: 75, label: "close" },
-          { start: 75, end: null, label: "chase" },
-        ],
       },
       lullabies: [{ id: "Trickster_Lullaby_1", name: "Trickster's Melody" }],
     },
@@ -584,12 +445,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Nemesis"],
-        ranges: [
-          { start: 0, end: 58, label: "far" },
-          { start: 58, end: 116, label: "mid" },
-          { start: 116, end: 174, label: "close" },
-          { start: 174, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -605,12 +460,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Cenobite"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -626,12 +475,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Artist"],
-        ranges: [
-          { start: 0, end: 37, label: "far" },
-          { start: 37, end: 75, label: "mid" },
-          { start: 75, end: 112, label: "close" },
-          { start: 112, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -647,12 +490,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Onryō"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [{ id: "Onryō_Lullaby_1", name: "Onryo's Whispers" }],
     },
@@ -668,12 +505,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Dredge"],
-        ranges: [
-          { start: 0, end: 29, label: "far" },
-          { start: 29, end: 58, label: "mid" },
-          { start: 58, end: 88, label: "close" },
-          { start: 88, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -689,12 +520,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Mastermind"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -710,12 +535,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Knight"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -731,12 +550,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Skull_Merchant"],
-        ranges: [
-          { start: 0, end: 28, label: "far" },
-          { start: 28, end: 56, label: "mid" },
-          { start: 56, end: 84, label: "close" },
-          { start: 84, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -752,12 +565,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Singularity"],
-        ranges: [
-          { start: 0, end: 29, label: "far" },
-          { start: 29, end: 59, label: "mid" },
-          { start: 59, end: 88, label: "close" },
-          { start: 88, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -773,12 +580,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Xenomorph"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -794,12 +595,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Good_Guy"],
-        ranges: [
-          { start: 0, end: 32, label: "far" },
-          { start: 32, end: 64, label: "mid" },
-          { start: 64, end: 96, label: "close" },
-          { start: 96, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -815,12 +610,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Unknown"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -836,12 +625,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Lich"],
-        ranges: [
-          { start: 0, end: 33, label: "far" },
-          { start: 33, end: 66, label: "mid" },
-          { start: 66, end: 99, label: "close" },
-          { start: 99, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -857,12 +640,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Dark_Lord"],
-        ranges: [
-          { start: 0, end: 30, label: "far" },
-          { start: 30, end: 60, label: "mid" },
-          { start: 60, end: 90, label: "close" },
-          { start: 90, end: null, label: "chase" },
-        ],
       },
       lullabies: [{ id: "Dark_Lord_Lullaby_1", name: "Dracula's Lullaby" }],
     },
@@ -878,12 +655,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Houndmaster"],
-        ranges: [
-          { start: 0, end: 28, label: "far" },
-          { start: 28, end: 57, label: "mid" },
-          { start: 57, end: 85, label: "close" },
-          { start: 85, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -899,12 +670,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Ghoul"],
-        ranges: [
-          { start: 0, end: 29, label: "far" },
-          { start: 29, end: 58, label: "mid" },
-          { start: 58, end: 87, label: "close" },
-          { start: 87, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -920,12 +685,6 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Animatronic"],
-        ranges: [
-          { start: 0, end: 28, label: "far" },
-          { start: 28, end: 56, label: "mid" },
-          { start: 56, end: 84, label: "close" },
-          { start: 84, end: null, label: "chase" },
-        ],
       },
       lullabies: [],
     },
@@ -1348,6 +1107,20 @@ export function findKiller(input: string): Killer | undefined {
 // Get killer by ID
 export function getKillerById(id: string): Killer | undefined {
   return KILLERS.find((killer) => killer.id === id);
+}
+
+// Get audio ranges for a theme
+export function getRangesForTheme(theme: string): AudioRange[] | undefined {
+  return THEME_RANGES[theme];
+}
+
+// Get audio ranges for a killer (using first theme if multiple)
+export function getRangesForKiller(killer: Killer, theme?: string): AudioRange[] | undefined {
+  const themes = killer.audio.terrorRadius?.themes;
+  if (!themes || themes.length === 0) return undefined;
+  
+  const targetTheme = theme || themes[0];
+  return THEME_RANGES[targetTheme];
 }
 
 // Generic theme IDs

@@ -352,10 +352,10 @@ function PreviewPage() {
     const audioTypeLabel = isGeneric ? t('generic') : t('unique');
 
     // For untagged killers, use THEME_RANGES based on the selected theme
-    // For tagged killers, use the ranges from the killer's data
-    const displayRanges = isGeneric && currentTheme
-      ? (THEME_RANGES[currentTheme] || terrorRadius.ranges)
-      : terrorRadius.ranges;
+    // For tagged killers, use the first theme's ranges from THEME_RANGES
+    const displayRanges = currentTheme
+      ? THEME_RANGES[currentTheme]
+      : THEME_RANGES[terrorRadius.themes[0]];
 
     return (
       <div className="mb-4 p-4 bg-bg-input rounded-lg last:mb-0">

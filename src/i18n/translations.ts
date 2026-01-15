@@ -12,7 +12,7 @@ export const translations = {
     step1: 'Listen to the',
     step1Hint: 'FAR',
     step1End: 'heartbeat hint',
-    step2: 'Guess the killer - wrong answers unlock more hints',
+    step2: 'Guess the killer - wrong answers unlock the closer theme',
     step3: 'Score more points by guessing with fewer hints!',
     pointsPerGuess: 'Points per correct guess',
     enterTheFog: 'Enter the Fog',
@@ -104,10 +104,10 @@ export const translations = {
 
     // Start Screen
     startQuestion: 'Pouvez-vous identifier le tueur par son rayon de terreur ?',
-    step1: 'Écoutez l\'indice',
-    step1Hint: 'LOIN',
-    step1End: 'du battement de cœur',
-    step2: 'Devinez le tueur - les mauvaises réponses débloquent plus d\'indices',
+    step1: 'Écoutez le son',
+    step1Hint: 'LOINTAIN',
+    step1End: 'du rayon de terreur',
+    step2: 'Devinez le tueur - les mauvaises réponses débloquent le thème plus proche',
     step3: 'Marquez plus de points en devinant avec moins d\'indices !',
     pointsPerGuess: 'Points par bonne réponse',
     enterTheFog: 'Entrer dans le Brouillard',

@@ -120,8 +120,7 @@ export function useGame(): UseGameReturn {
     const themes = killer.audio.terrorRadius?.themes || [];
     if (themes.length === 0) return { theme: null, isGeneric: false };
     
-    // Separate generic and unique themes
-    const genericThemes = themes.filter(t => isGenericTheme(t));
+    // Separate unique themes from generic ones
     const uniqueThemes = themes.filter(t => !isGenericTheme(t));
     
     // If generic already used this game, only pick from unique themes if available
