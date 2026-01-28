@@ -47,7 +47,6 @@ function GamePage() {
             feedback={game.feedback}
             inputDisabled={game.inputDisabled}
             audioError={game.audioError}
-            audioRef={game.audioRef}
             hintLevels={game.hintLevels}
             currentRanges={game.currentRanges}
             onPlayHint={game.playHint}

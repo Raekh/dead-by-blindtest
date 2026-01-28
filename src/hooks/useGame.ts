@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { KILLERS, THEME_RANGES, findKiller, Killer, AudioRange, isGenericTheme } from '../data/killers';
 import { useVolume } from '../contexts/VolumeContext';
+import { useAudioPreload } from '../contexts/AudioPreloadContext';
 
 const TOTAL_ROUNDS = 10;
 const HINT_LEVELS = ['far', 'mid', 'close', 'chase'] as const;
@@ -49,7 +50,6 @@ export interface UseGameReturn {
   feedback: Feedback | null;
   inputDisabled: boolean;
   audioError: boolean;
-  audioRef: React.RefObject<HTMLAudioElement | null>;
   hintLevels: readonly typeof HINT_LEVELS[number][];
   currentRanges: AudioRange[] | null;
   startGame: () => void;
@@ -62,6 +62,7 @@ export interface UseGameReturn {
 
 export function useGame(): UseGameReturn {
   const { volume, isMuted } = useVolume();
+  const { getAudio } = useAudioPreload();
   const [screen, setScreen] = useState<Screen>('start');
   const [currentRound, setCurrentRound] = useState(0);
   const [score, setScore] = useState(0);
@@ -151,48 +152,44 @@ export function useGame(): UseGameReturn {
 
   // Play a specific hint level
   const playHint = useCallback((hintIndex: number) => {
-    if (!audioRef.current || !currentTheme || !currentRanges) return;
+    if (!currentTheme || !currentRanges) return;
     if (hintIndex > roundState.currentHintIndex) return; // Can't play locked hints
 
     const range = currentRanges[hintIndex];
     if (!range) return;
 
-    const audio = audioRef.current;
+    // Get the preloaded audio element
+    const preloadedAudio = getAudio(currentTheme);
+    if (!preloadedAudio) {
+      console.error('Audio not found in cache:', currentTheme);
+      setAudioError(true);
+      setInputDisabled(false);
+      return;
+    }
+
+    // Use the preloaded audio element directly
+    audioRef.current = preloadedAudio;
+    const audio = preloadedAudio;
     
     // Apply volume settings
     audio.volume = isMuted ? 0 : volume;
-    
-    // Set the audio source if not already set
-    if (!audio.src || !audio.src.includes(currentTheme)) {
-      audio.src = `/audio/${currentTheme}.ogg`;
-    }
 
-    // Seek to the start of the range and play
-    const playFromRange = () => {
-      audio.currentTime = range.start;
-      audio.volume = isMuted ? 0 : volume;
-      audio.play()
-        .then(() => {
-          setRoundState(prev => ({ 
-            ...prev, 
-            isPlaying: true, 
-            hasPlayedCurrentHint: true 
-          }));
-          setInputDisabled(false);
-        })
-        .catch((err) => {
-          console.error('Audio playback failed:', err);
-          setAudioError(true);
-          setInputDisabled(false);
-        });
-    };
-
-    if (audio.readyState >= 1) {
-      playFromRange();
-    } else {
-      audio.addEventListener('loadedmetadata', playFromRange, { once: true });
-      audio.load();
-    }
+    // Audio is already loaded, so we can play immediately
+    audio.currentTime = range.start;
+    audio.play()
+      .then(() => {
+        setRoundState(prev => ({ 
+          ...prev, 
+          isPlaying: true, 
+          hasPlayedCurrentHint: true 
+        }));
+        setInputDisabled(false);
+      })
+      .catch((err) => {
+        console.error('Audio playback failed:', err);
+        setAudioError(true);
+        setInputDisabled(false);
+      });
 
     // Stop at the end of the range
     const checkEnd = () => {
@@ -210,7 +207,7 @@ export function useGame(): UseGameReturn {
     };
     audio.addEventListener('pause', cleanup, { once: true });
     audio.addEventListener('ended', cleanup, { once: true });
-  }, [currentTheme, currentRanges, roundState.currentHintIndex, volume, isMuted]);
+  }, [currentTheme, currentRanges, roundState.currentHintIndex, volume, isMuted, getAudio]);
 
   // Initialize a new round
   const initializeRound = useCallback((killer: Killer, genericAlreadyUsed: boolean): boolean => {
@@ -228,11 +225,8 @@ export function useGame(): UseGameReturn {
       hasPlayedCurrentHint: false,
     });
 
-    // Load audio
-    if (audioRef.current && theme) {
-      audioRef.current.src = `/audio/${theme}.ogg`;
-      audioRef.current.load();
-    }
+    // Audio is preloaded - no need to load it here
+    // The playHint function will get the preloaded audio from the cache
     
     // Return whether this round uses a generic theme
     return isGeneric;
@@ -484,7 +478,6 @@ export function useGame(): UseGameReturn {
     feedback,
     inputDisabled,
     audioError,
-    audioRef,
     hintLevels: HINT_LEVELS,
     currentRanges,
     startGame,

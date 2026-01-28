@@ -14,7 +14,6 @@ interface GameScreenProps {
   feedback: Feedback | null;
   inputDisabled: boolean;
   audioError: boolean;
-  audioRef: React.RefObject<HTMLAudioElement | null>;
   hintLevels: readonly ('far' | 'mid' | 'close' | 'chase')[];
   currentRanges: AudioRange[] | null;
   onPlayHint: (hintIndex: number) => void;
@@ -32,7 +31,6 @@ function GameScreen({
   feedback,
   inputDisabled,
   audioError,
-  audioRef,
   hintLevels,
   currentRanges,
   onPlayHint,
@@ -321,9 +319,6 @@ function GameScreen({
           )}
         </div>
       </div>
-
-      {/* Hidden audio element */}
-      <audio ref={audioRef} preload="auto" />
     </div>
   );
 }
