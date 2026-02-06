@@ -13,9 +13,9 @@ import LanguageSwitcher from './LanguageSwitcher';
 import VolumeControl from './VolumeControl';
 
 type FilterType = 'all' | 'unique-chase' | 'generic' | 'lullaby' | 'no-tr';
-type GroupBy = 'none' | 'tagged' | 'terror';
+type GroupBy = 'none' | 'unique' | 'terror';
 
-// Track selected theme per killer for untagged killers
+// Track selected theme per killer for generic killers
 type SelectedThemes = Record<string, string>;
 
 function PreviewPage() {
@@ -94,9 +94,9 @@ function PreviewPage() {
 
       if (groupBy === 'terror') {
         groupValues = killer.audio.terrorRadius?.themes || ['None'];
-      } else if (groupBy === 'tagged') {
-        const isTagged = killer.audio.terrorRadius?.themes.length === 1;
-        groupValues = [isTagged ? 'Tagged' : 'Untagged'];
+    } else if (groupBy === 'unique') {
+      const isUnique = killer.audio.terrorRadius?.themes.length === 1;
+      groupValues = [isUnique ? 'Unique' : 'Generic'];
       }
 
       groupValues.forEach((groupValue) => {
@@ -118,30 +118,6 @@ function PreviewPage() {
       (a, b) => groupedKillers[b].length - groupedKillers[a].length
     );
   }, [groupedKillers]);
-
-  // Statistics
-  const stats = useMemo(() => {
-    const taggedKillers = KILLERS.filter(
-      (k) => k.audio.terrorRadius?.themes.length === 1
-    );
-    const lullabyKillers = KILLERS.filter((k) => k.audio.lullabies.length > 0);
-    const noTerrorKillers = KILLERS.filter(
-      (k) => k.audio.terrorRadius === null
-    );
-
-    const uniqueThemes = new Set<string>();
-    KILLERS.forEach((k) => {
-      k.audio.terrorRadius?.themes.forEach((t) => uniqueThemes.add(t));
-    });
-
-    return {
-      total: KILLERS.length,
-      uniqueThemes: taggedKillers.length,
-      withLullaby: lullabyKillers.length,
-      noTerror: noTerrorKillers.length,
-      totalThemes: uniqueThemes.size,
-    };
-  }, []);
 
   // Handle range click to toggle audio segment playback (like game behavior)
   const handleRangeClick = useCallback(
@@ -250,7 +226,7 @@ function PreviewPage() {
     [volume, isMuted, playingState]
   );
 
-  // Handle theme selector change for untagged killers
+  // Handle theme selector change for generic killers
   const handleThemeChange = useCallback(
     (killerId: string, theme: string, audioId: string) => {
       setSelectedThemes((prev) => ({ ...prev, [killerId]: theme }));
@@ -351,8 +327,8 @@ function PreviewPage() {
       : 'bg-accent/30 text-accent';
     const audioTypeLabel = isGeneric ? t('generic') : t('unique');
 
-    // For untagged killers, use THEME_RANGES based on the selected theme
-    // For tagged killers, use the first theme's ranges from THEME_RANGES
+    // For generic killers, use THEME_RANGES based on the selected theme
+    // For unique killers, use the first theme's ranges from THEME_RANGES
     const displayRanges = currentTheme
       ? THEME_RANGES[currentTheme]
       : THEME_RANGES[terrorRadius.themes[0]];
@@ -609,7 +585,7 @@ function PreviewPage() {
           className="bg-bg-input border border-border text-text-primary py-2.5 px-4 rounded cursor-pointer focus:outline-none focus:border-accent transition-colors"
         >
           <option value="none">{t('noGrouping')}</option>
-          <option value="tagged">{t('taggedUntagged')}</option>
+          <option value="unique">{t('taggedUntagged')}</option>
           <option value="terror">{t('terrorRadiusTheme')}</option>
         </select>
       </div>
@@ -634,33 +610,6 @@ function PreviewPage() {
             </div>
           ))
         )}
-      </div>
-
-      {/* Statistics */}
-      <div className="mt-10 p-6 bg-bg-card rounded-lg border border-border">
-        <h3 className="mb-5 text-accent uppercase tracking-wider text-sm font-semibold">{t('statistics')}</h3>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-5">
-          <div className="text-center p-4 bg-bg-input rounded-lg">
-            <div className="text-4xl font-bold text-text-primary">{stats.total}</div>
-            <div className="text-sm text-text-muted mt-1">{t('totalKillers')}</div>
-          </div>
-          <div className="text-center p-4 bg-bg-input rounded-lg">
-            <div className="text-4xl font-bold text-text-primary">{stats.uniqueThemes}</div>
-            <div className="text-sm text-text-muted mt-1">{t('uniqueThemes')}</div>
-          </div>
-          <div className="text-center p-4 bg-bg-input rounded-lg">
-            <div className="text-4xl font-bold text-text-primary">{stats.withLullaby}</div>
-            <div className="text-sm text-text-muted mt-1">{t('withLullaby')}</div>
-          </div>
-          <div className="text-center p-4 bg-bg-input rounded-lg">
-            <div className="text-4xl font-bold text-text-primary">{stats.noTerror}</div>
-            <div className="text-sm text-text-muted mt-1">{t('noTerror')}</div>
-          </div>
-          <div className="text-center p-4 bg-bg-input rounded-lg">
-            <div className="text-4xl font-bold text-text-primary">{stats.totalThemes}</div>
-            <div className="text-sm text-text-muted mt-1">{t('totalThemes')}</div>
-          </div>
-        </div>
       </div>
 
       {/* Footer */}
