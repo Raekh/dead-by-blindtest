@@ -24,6 +24,7 @@ function GamePage() {
           </span>
         </div>
         <div className="flex items-center gap-4">
+          <span className="text-text-muted text-sm">Made with 💛 by Raekh</span>
           <VolumeControl />
           <LanguageSwitcher />
           <a href="/preview" className="text-text-muted hover:text-accent transition-colors text-xs">

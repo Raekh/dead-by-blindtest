@@ -503,6 +503,7 @@ function PreviewPage() {
           </h2>
         </div>
         <div className="flex items-center gap-4">
+          <span className="text-text-muted text-sm">Made with 💛 by Raekh</span>
           <VolumeControl />
           <LanguageSwitcher />
         </div>
