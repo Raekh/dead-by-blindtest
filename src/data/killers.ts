@@ -704,6 +704,21 @@ export const KILLERS: Killer[] = [
       lullabies: [],
     },
   },
+
+  // ===========================================
+  // CHAPTER 38 - The First 
+  // ===========================================
+  {
+    id: "first",
+    name: "The First",
+    aliases: ["first", "henry", "creel"],
+    audio: {
+      terrorRadius: {
+        themes: ["TerrorRadius_First"],
+      },
+      lullabies: [],
+    },
+  },
 ];
 
 // Theme metadata
@@ -1073,6 +1088,12 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 84, end: null, label: "chase" },
   ],
   TerrorRadius_Krasue: [
+    { start: 0, end: 31, label: "far" },
+    { start: 31, end: 62, label: "mid" },
+    { start: 62, end: 93, label: "close" },
+    { start: 93, end: null, label: "chase" },
+  ],
+  TerrorRadius_First: [
     { start: 0, end: 31, label: "far" },
     { start: 31, end: 62, label: "mid" },
     { start: 62, end: 93, label: "close" },
