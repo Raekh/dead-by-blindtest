@@ -820,6 +820,7 @@ export const THEMES: Record<string, { name: string; description: string }> = {
   },
   TerrorRadius_Ghoul: { name: "Ghoul", description: "Ghoul unique theme" },
   TerrorRadius_Krasue: { name: "Krasue", description: "Krasue unique theme" },
+  TerrorRadius_First: { name: "First", description: "First unique theme" },
 };
 
 // Lullaby metadata
