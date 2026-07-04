@@ -719,6 +719,21 @@ export const KILLERS: Killer[] = [
       lullabies: [],
     },
   },
+
+  // ===========================================
+  // CHAPTER 39 - The Slasher (Friday the 13th)
+  // ===========================================
+  {
+    id: "slasher",
+    name: "The Slasher",
+    aliases: ["slasher", "jason", "jason voorhees"],
+    audio: {
+      terrorRadius: {
+        themes: ["TerrorRadius_Slasher"],
+      },
+      lullabies: [],
+    },
+  },
 ];
 
 // Theme metadata
@@ -821,6 +836,10 @@ export const THEMES: Record<string, { name: string; description: string }> = {
   TerrorRadius_Ghoul: { name: "Ghoul", description: "Ghoul unique theme" },
   TerrorRadius_Krasue: { name: "Krasue", description: "Krasue unique theme" },
   TerrorRadius_First: { name: "First", description: "First unique theme" },
+  TerrorRadius_Slasher: {
+    name: "Slasher",
+    description: "Slasher/Jason unique theme",
+  },
 };
 
 // Lullaby metadata
@@ -987,10 +1006,10 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 75, end: null, label: "chase" },
   ],
   TerrorRadius_Nemesis: [
-    { start: 0, end: 62.5, label: "far" },
-    { start: 62.5, end: 125, label: "mid" },
-    { start: 125, end: 187.5, label: "close" },
-    { start: 187.5, end: null, label: "chase" },
+    { start: 0, end: 58, label: "far" },
+    { start: 58, end: 116, label: "mid" },
+    { start: 116, end: 174, label: "close" },
+    { start: 174, end: null, label: "chase" },
   ],
   TerrorRadius_Cenobite: [
     { start: 0, end: 30, label: "far" },
@@ -1011,10 +1030,10 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 90, end: null, label: "chase" },
   ],
   TerrorRadius_Dredge: [
-    { start: 0, end: 30, label: "far" },
-    { start: 30, end: 60, label: "mid" },
-    { start: 60, end: 90, label: "close" },
-    { start: 90, end: null, label: "chase" },
+    { start: 0, end: 29, label: "far" },
+    { start: 29, end: 58, label: "mid" },
+    { start: 58, end: 88, label: "close" },
+    { start: 88, end: null, label: "chase" },
   ],
   TerrorRadius_Mastermind: [
     { start: 0, end: 30, label: "far" },
@@ -1099,6 +1118,12 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 31, end: 62, label: "mid" },
     { start: 62, end: 93, label: "close" },
     { start: 93, end: null, label: "chase" },
+  ],
+  TerrorRadius_Slasher: [
+    { start: 0, end: 30, label: "far" },
+    { start: 30, end: 60, label: "mid" },
+    { start: 60, end: 90, label: "close" },
+    { start: 90, end: null, label: "chase" },
   ],
 };
 
