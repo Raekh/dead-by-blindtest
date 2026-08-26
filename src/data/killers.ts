@@ -456,7 +456,7 @@ export const KILLERS: Killer[] = [
   {
     id: "cenobite",
     name: "The Cenobite",
-    aliases: ["cenobite", "pinhead", "elliot", "elliot spencer"],
+    aliases: ["cenobite", "pinhead", "elliot", "elliot spencer", "hellraiser"],
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Cenobite"],
@@ -734,6 +734,21 @@ export const KILLERS: Killer[] = [
       lullabies: [],
     },
   },
+
+  // ===========================================
+  // CHAPTER 40 - The Judgment
+  // ===========================================
+  {
+    id: "judgment",
+    name: "The Judgment",
+    aliases: ["judgment"],
+    audio: {
+      terrorRadius: {
+        themes: ["TerrorRadius_Judgment"],
+      },
+      lullabies: [],
+    },
+  },
 ];
 
 // Theme metadata
@@ -839,6 +854,10 @@ export const THEMES: Record<string, { name: string; description: string }> = {
   TerrorRadius_Slasher: {
     name: "Slasher",
     description: "Slasher/Jason unique theme",
+  },
+  TerrorRadius_Judgment: {
+    name: "Judgment",
+    description: "Judgment unique theme",
   },
 };
 
@@ -1120,6 +1139,12 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 93, end: null, label: "chase" },
   ],
   TerrorRadius_Slasher: [
+    { start: 0, end: 30, label: "far" },
+    { start: 30, end: 60, label: "mid" },
+    { start: 60, end: 90, label: "close" },
+    { start: 90, end: null, label: "chase" },
+  ],
+  TerrorRadius_Judgment: [
     { start: 0, end: 30, label: "far" },
     { start: 30, end: 60, label: "mid" },
     { start: 60, end: 90, label: "close" },
