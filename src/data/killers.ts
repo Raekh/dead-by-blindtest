@@ -720,8 +720,10 @@ export const KILLERS: Killer[] = [
     },
   },
 
+  // CHAPTER 39 - Skipped, no killer
+
   // ===========================================
-  // CHAPTER 39 - The Slasher (Friday the 13th)
+  // CHAPTER 40 - The Slasher (Friday the 13th)
   // ===========================================
   {
     id: "slasher",
@@ -736,7 +738,7 @@ export const KILLERS: Killer[] = [
   },
 
   // ===========================================
-  // CHAPTER 40 - The Judgment
+  // CHAPTER 41 - The Judgment
   // ===========================================
   {
     id: "judgment",
@@ -745,6 +747,21 @@ export const KILLERS: Killer[] = [
     audio: {
       terrorRadius: {
         themes: ["TerrorRadius_Judgment"],
+      },
+      lullabies: [],
+    },
+  },
+
+  // ===========================================
+  // CHAPTER 42 - The Terrifier
+  // ===========================================
+  {
+    id: "terrifier",
+    name: "The Terrifier",
+    aliases: ["terrifier", "art"],
+    audio: {
+      terrorRadius: {
+        themes: ["TerrorRadius_Terrifier"],
       },
       lullabies: [],
     },
@@ -858,6 +875,10 @@ export const THEMES: Record<string, { name: string; description: string }> = {
   TerrorRadius_Judgment: {
     name: "Judgment",
     description: "Judgment unique theme",
+  },
+  TerrorRadius_Terrifier: {
+    name: "Terrifier",
+    description: "Terrifier unique theme",
   },
 };
 
@@ -1145,6 +1166,12 @@ export const THEME_RANGES: Record<string, AudioRange[]> = {
     { start: 90, end: null, label: "chase" },
   ],
   TerrorRadius_Judgment: [
+    { start: 0, end: 30, label: "far" },
+    { start: 30, end: 60, label: "mid" },
+    { start: 60, end: 90, label: "close" },
+    { start: 90, end: null, label: "chase" },
+  ],
+  TerrorRadius_Terrifier: [
     { start: 0, end: 30, label: "far" },
     { start: 30, end: 60, label: "mid" },
     { start: 60, end: 90, label: "close" },
